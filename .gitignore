@@ -1,0 +1,9 @@
+# Imagenes
+*.png
+*.jpg
+
+#Videos
+*.mp4
+
+#Musica
+*.mp3
