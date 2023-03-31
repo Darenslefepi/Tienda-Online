@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Quicksand:wght@300;500;700&family=Rubik+Gemstones&family=Titan+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logos/favicon_bota_fora.svg" type="img">
     <title>Fruziy</title>
     <style>
         :root {
@@ -42,41 +43,33 @@
         }
         .title {
             font-size: var(--lg);/* utilizo la variable creada en :root */
-            margin-bottom: 12px; /* para separar de los otros */
-            text-align: center;/* para cnetar el titulo */
+            margin-bottom: 36px; /* para separar de los otros */
+            text-align: start;/* para cnetar el titulo */
             /* color: aqua; */
-        }
-        .subtitle {
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300; /* para bajar gruesosr de la letra con google */
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
         }
         .form {
             display: flex; /* al tipo bloque esto lo pasa a flex */
             flex-direction: column; /* crea colunnas en los password y confirm */
+        }
+        .form div {
+            display: flex;
+            flex-direction: column;/* para ql colocar el div no se dañe */
         }
         .label {
             font-size: var(--sm);
             font-weight: bold;
             margin-bottom: 4px;
         }
-        .input {
-            background-color: var(--text-input-field);
-            border: none; /* quita la linea del borde negra */
-            border-radius: 8px;
-            height: 30px;
+        .value {
+            color: var(--very-light-pink);
             font-size: var(--md);
-            padding: 6px;
-            margin-bottom: 12px; /* separa los botones con margen */
+            margin: 8px 0 32px 0; /* otra forma se lee como un relog */
         }
-        .primary-button {
-            background-color: var(--hospital-green);
+        .secondary-button {
+            background-color: var(--white);
             border-radius: 8px;
-            border: none;
-            color: var(--white);
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
             width: 100%;
             cursor: pointer; /* cuando coloco sobre confirm el cursor se transforma en una mano */
             font-size: var(--md);
@@ -88,8 +81,12 @@
             margin-bottom: 30px;
         }
         @media (max-width: 640px) {
-            .logo {
-                display: block;
+            .form-container {
+                height: 100%;
+            }
+            .form {
+                height: 100%;
+                justify-content: space-between;
             }
         }
     </style>
@@ -97,26 +94,24 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-
-            <h1 class="title">Create a new Password</h1>
-            <p class="subtitle">Enter a new password for your account</p>
+            <h1 class="title">My account</h1>
+            
             <form action="/" class="form"><!-- etiqueta para formularios -->
+                <div>
+                <label for="name"
+                class="label">Name</label>
+                <p class="value">Camila Yokoo</p>
+                
+                <label for="email"
+                class="label">Email address</label>
+                <p class="value">camilayokoo@gmail.com</p>
+                
                 <label for="password"
                 class="label">Password</label>
-                <input type="password" 
-                id="password" 
-                placeholder="*********" 
-                class="input input-password"> <!-- el placeholder muestra al usuari los asteriscos y protege la contraseña -->
-
-                <label for="new-password"
-                class="label">Password</label>
-                <input type="password" 
-                id="new-password" 
-                placeholder="*********" 
-                class="input input-password">
-
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <p class="value">*********</p>
+                
+                </div>
+                <input type="submit" value="Edit" class="secondary-button login-button">
             </form>
         </div>
     </div>

@@ -40,23 +40,17 @@
             justify-self: center;/* para que quede en el centro */
             display: none; /* para que no aparesca en desktop y si en movil con responsive */
         }
-        .title {
-            font-size: var(--lg);/* utilizo la variable creada en :root */
-            margin-bottom: 12px; /* para separar de los otros */
-            text-align: center;/* para cnetar el titulo */
-            /* color: aqua; */
-        }
-        .subtitle {
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300; /* para bajar gruesosr de la letra con google */
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
         .form {
             display: flex; /* al tipo bloque esto lo pasa a flex */
             flex-direction: column; /* crea colunnas en los password y confirm */
+        }
+        .form a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
+            /* estilizo la parte para recordar el password */
         }
         .label {
             font-size: var(--sm);
@@ -72,6 +66,10 @@
             padding: 6px;
             margin-bottom: 12px; /* separa los botones con margen */
         }
+        .input-email {
+            margin-bottom: 24px;/* separa el cudro del email de la plabra password */
+
+        }
         .primary-button {
             background-color: var(--hospital-green);
             border-radius: 8px;
@@ -83,13 +81,27 @@
             font-weight: bold; /* me pinta en negrita */
             height: 50px; /* le da el tamaño al boton */
         }
+        .secondary-button {
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer; /* cuando coloco sobre confirm el cursor se transforma en una mano */
+            font-size: var(--md);
+            font-weight: bold; /* me pinta en negrita */
+            height: 50px; /* le da el tamaño al boton */
+        }
         .login-button {
             margin-top: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 30px; /* le da margenes al boton log in */
         }
         @media (max-width: 640px) {
             .logo {
                 display: block;
+            }
+            .secondary-button {
+                margin-top: 50%;
             }
         }
     </style>
@@ -99,25 +111,27 @@
         <div class="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <h1 class="title">Create a new Password</h1>
-            <p class="subtitle">Enter a new password for your account</p>
+            
             <form action="/" class="form"><!-- etiqueta para formularios -->
+                <label for="email"
+                class="label">Email address</label>
+                <input type="text" 
+                id="email" 
+                placeholder="fruziy@example.com" 
+                class="input input-email"> <!-- el placeholder muestra al usuari los asteriscos y protege la contraseña -->
+
                 <label for="password"
                 class="label">Password</label>
                 <input type="password" 
                 id="password" 
                 placeholder="*********" 
-                class="input input-password"> <!-- el placeholder muestra al usuari los asteriscos y protege la contraseña -->
-
-                <label for="new-password"
-                class="label">Password</label>
-                <input type="password" 
-                id="new-password" 
-                placeholder="*********" 
                 class="input input-password">
 
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <input type="submit" value="Log in" class="primary-button login-button"><!-- esto es el boton verde de confirmacion -->
+                <a href="/">Forgot my password</a>
             </form>
+
+            <button class="secondary-button signup-button">Sing up</button>
         </div>
     </div>
 </body>
